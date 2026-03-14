@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrameToPhrase · Try</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="trialstyles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav__back">← Back</a>
+    <span class="nav__logo">Frame<em>To</em>Phrase</span>
+  </nav>
+
+  <!-- MAIN LAYOUT -->
+  <main class="workspace">
+
+    <!-- LEFT: Upload + Preview -->
+    <div class="panel panel--upload">
+      <div class="panel__label">Your Image</div>
+
+      <div id="dropZone" class="dropzone">
+        <div class="dropzone__idle" id="dropIdle">
+          <div class="dropzone__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="14" fill="rgba(232,97,26,.08)"/>
+              <path d="M24 14v14m0-14l-5 5m5-5l5 5" stroke="#e8611a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="12" y="30" width="24" height="4" rx="2" fill="rgba(232,97,26,.15)"/>
+            </svg>
+          </div>
+          <p class="dropzone__title">Drop image here</p>
+          <p class="dropzone__hint">or click to browse · JPG, PNG, WEBP · max 2 MB</p>
+        </div>
+        <img id="previewImg" class="dropzone__preview" src="" alt="Preview" draggable="false" />
+        <div class="dropzone__loading" id="dropLoading">
+          <div class="spinner"></div>
+          <span>Reading image…</span>
+        </div>
+        <input type="file" id="fileInput" class="dropzone__file-input" accept="image/*" />
+      </div>
+
+      <!-- File info strip -->
+      <div class="file-strip" id="fileStrip">
+        <span class="file-strip__name" id="fileName">—</span>
+        <div class="file-strip__bar">
+          <div class="file-strip__fill" id="fileBarFill"></div>
+        </div>
+        <span class="file-strip__pct" id="filePct">0%</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Caption Result -->
+    <div class="panel panel--result" id="resultPanel">
+      <div class="panel__label">Generated Caption</div>
+
+      <!-- Idle state -->
+      <div class="result-idle" id="resultIdle">
+        <p class="result-idle__text">Upload an image<br/>to see the caption.</p>
+      </div>
+
+      <!-- Loading state -->
+      <div class="result-loading" id="resultLoading">
+        <div class="result-loading__dots">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="result-loading__label">Generating caption…</p>
+      </div>
+
+      <!-- Caption display -->
+      <div class="result-output" id="resultOutput">
+        <div class="result-output__quote">"</div>
+        <p class="result-output__text" id="captionText"></p>
+        <div class="result-output__meta">
+          <span class="result-output__chip">ResNet‑101</span>
+          <span class="result-output__chip">Soft Attention</span>
+          <span class="result-output__chip">Beam 3</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script2.js"></script>
+</body>
+</html>

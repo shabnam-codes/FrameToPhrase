@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrameToPhrase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav__logo">Frame<em>To</em>Phrase</span>
+    <a href="trial.html" class="nav__cta">Try it →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__left">
+      <div class="hero__eyebrow"></div>
+      <h1 class="hero__title">
+        Every frame<br/><em>tells a story.</em>
+      </h1>
+      <p class="hero__desc">
+        FrameToPhrase reads an image and writes what it sees — using ResNet‑101 visual features, soft attention, and an LSTM decoder trained on Flickr8k.
+      </p>
+      <a href="trial.html" class="btn-primary">Upload an image</a>
+    </div>
+
+    <div class="hero__right">
+      <div class="hero__stack">
+        <div class="hero__card hero__card--back">
+          <img src="card_6.jpg" alt="" />
+          <p>"a dog runs through the snow"</p>
+        </div>
+        <div class="hero__card hero__card--front">
+          <img src="card_1.jpg" alt="" />
+          <p>"a man in a black wetsuit is surfing"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="pipeline">
+    <div class="pipeline__label">How it works</div>
+    <div class="pipeline__steps">
+      <div class="pipeline__step">
+        <div class="pipeline__num">01</div>
+        <h3 class="pipeline__name">Encode</h3>
+        <p class="pipeline__desc">ResNet‑101 extracts a rich 2048‑dim feature map from your image.</p>
+      </div>
+      <div class="pipeline__arrow">→</div>
+      <div class="pipeline__step">
+        <div class="pipeline__num">02</div>
+        <h3 class="pipeline__name">Attend</h3>
+        <p class="pipeline__desc">Bahdanau soft attention focuses on relevant image regions word by word.</p>
+      </div>
+      <div class="pipeline__arrow">→</div>
+      <div class="pipeline__step">
+        <div class="pipeline__num">03</div>
+        <h3 class="pipeline__name">Decode</h3>
+        <p class="pipeline__desc">An LSTM decoder generates a natural language caption, token by token.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="examples">
+    <div class="examples__header">
+      <span class="examples__label">Outputs</span>
+      <h2 class="examples__title">Model in action</h2>
+    </div>
+    <div class="examples__grid">
+      <div class="ex-card">
+        <img src="card_1.jpg" class="ex-card__img" alt="Surfer" />
+        <p class="ex-card__cap">"a man in a black wetsuit is surfing"</p>
+      </div>
+      <div class="ex-card">
+        <img src="img_3.jpg" class="ex-card__img" alt="Keyboard" />
+        <p class="ex-card__cap">"keyboard with bright and enlarged keys, possibly for a vision impaired person"</p>
+      </div>
+      <div class="ex-card">
+        <img src="card_3.jpg" class="ex-card__img" alt="Bubble" />
+        <p class="ex-card__cap">"a man and a dog are playing with a large bubble"</p>
+      </div>
+      <div class="ex-card">
+        <img src="img_6.png" class="ex-card__img" alt="Swimming dog" />
+        <p class="ex-card__cap">"a black and white dog is swimming in a pool"</p>
+      </div>
+      <div class="ex-card">
+        <img src="img_4.jpg" class="ex-card__img" alt="Running dog" />
+        <p class="ex-card__cap">"a black and white dog is running through the grass"</p>
+      </div>
+      <div class="ex-card">
+        <img src="card_6.jpg" class="ex-card__img" alt="Snow dog" />
+        <p class="ex-card__cap">"a dog runs through the snow"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__left">
+      <span class="footer__logo">Frame<em>To</em>Phrase</span>
+      <p class="footer__sub">ResNet‑101 · Soft Attention · LSTM · Flickr8k </p>
+    </div>
+    <a href="https://github.com/shabnam-codes/FrameToPhrase" target="_blank" rel="noopener" class="footer__gh">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      View on GitHub
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
