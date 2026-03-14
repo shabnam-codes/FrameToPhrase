@@ -1,7 +1,6 @@
 # FrameToPhrase
 FrameToPhrase is a deep learning image captioning system built as part of an academic project. It takes any image as input and generates a natural language description of what it sees.
 
----
 ## Technologies
 **Deep Learning & Backend**
 Python
@@ -17,17 +16,6 @@ JavaScript
 - Flickr8k — 8,000 images, 5 reference captions each
 - BLEU-4 score (bilingual evaluation understudy)
 
----
-## Features
-
-- **End-to-end inference** — upload any image via the browser and get a caption in seconds
-- **Attention mechanism** — the model doesn't just look at the whole image; it focuses on specific regions as it generates each word
-- **Beam search decoding** — uses beam size 3 to explore multiple caption candidates and return the most likely one
-- **Drag-and-drop upload** — the trial page accepts drag-and-drop or file picker input, shows a live image preview, and animates the caption result
-- **Flask REST API** — a clean `/caption` endpoint handles multipart image uploads, validates file type and size, and returns JSON
-- **Responsive frontend** — two-page site: an editorial landing page and a focused upload/caption interface
-
----
 ## The Process
 
 **1. Preprocessing**
@@ -43,10 +31,7 @@ Image ──► ResNet-101 Encoder ──► 14×14×2048 Feature Map
                                           │
                               LSTM Decoder ──► token by token ──► Caption
 ```
-The encoder is a pretrained ResNet-101 with the classification head removed. At each decoding step, the attention layer assigns weights to every spatial location in the feature map — so when generating the word *"surfing"*, the model attends to the water and the board. The LSTM decoder then generates the next word conditioned on that context vector and the previous word.
-
 **3. Training**
-
 | Hyperparameter | Value |
 |----------------|-------|
 | Batch size | 32 |
@@ -64,8 +49,6 @@ The best checkpoint was saved based on BLEU-4 score on the validation split.
 | Metric | Score |
 |--------|-------|
 | BLEU-4 | ** ** |
-
-
 
 ## What I Learned
 
