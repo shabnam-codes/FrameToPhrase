@@ -62,10 +62,6 @@ Building FrameToPhrase from scratch meant touching every layer of a machine lear
 
 **Frontend and model work must talk to each other.** Designing the trial page required thinking about latency — the model takes a moment to run, so the UI needed clear loading states so the experience didn't feel broken. State management in vanilla JS (idle → loading → result → error) taught more about UX than any tutorial.
 
----
-
-## Preview
-
 
 To run it locally:
 
