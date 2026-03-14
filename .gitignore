@@ -1,0 +1,22 @@
+# Runtime artifacts
+temp_image.jpg
+uploads/
+
+# Editor junk
+tempCodeRunnerFile.python
+*.pyc
+__pycache__/
+
+# Model checkpoints (too large for GitHub)
+*.pth.tar
+*.pth
+*.pt
+
+# Generated data files
+*.hdf5
+*.h5
+
+# Environment
+.env
+venv/
+.venv/
